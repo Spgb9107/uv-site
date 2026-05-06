@@ -15,6 +15,8 @@ export interface Product {
   specs: { label: string; value: string }[];
   description: string;
   includedItems: string[];
+  amazonUrl: string;
+  asin: string;
   isNew?: boolean;
   isBestSeller?: boolean;
 }
@@ -64,7 +66,9 @@ export const products: Product[] = [
       "Desktop Mini Tripod Base",
       "Ground Spike for outdoor use",
       "Premium Carrying Case"
-    ]
+    ],
+    amazonUrl: "https://www.amazon.com/dp/B0G3WN7B5H",
+    asin: "B0G3WN7B5H",
   },
   {
     id: "vlog-k5",
@@ -107,7 +111,9 @@ export const products: Product[] = [
       "Microphone Ball Head Mount",
       "Microphone Storage Box",
       "Premium Carrying Bag"
-    ]
+    ],
+    amazonUrl: "https://www.amazon.com/dp/B0DL9FKBRS",
+    asin: "B0DL9FKBRS",
   },
   {
     id: "vlog-k4",
@@ -152,7 +158,9 @@ export const products: Product[] = [
       "Wireless Remote Controller",
       "3.5mm TRRS Cable + Lightning Adapter",
       "Windscreen + Premium Carry Bags (×2)"
-    ]
+    ],
+    amazonUrl: "https://www.amazon.com/dp/B0CJDZJMPC",
+    asin: "B0CJDZJMPC",
   },
   {
     id: "vlog-k2",
@@ -194,7 +202,9 @@ export const products: Product[] = [
       "360° Rotating Ball Head",
       "Compact Tripod",
       "Premium Storage Case"
-    ]
+    ],
+    amazonUrl: "https://www.amazon.com/dp/B08VJBDZFP",
+    asin: "B08VJBDZFP",
   },
   {
     id: "v-master",
@@ -237,7 +247,9 @@ export const products: Product[] = [
       "Microphone Windscreen",
       "TRS Audio Cable + TRRS Audio Cable",
       "Premium Storage Case"
-    ]
+    ],
+    amazonUrl: "https://www.amazon.com/dp/B08VN7FXSN",
+    asin: "B08VN7FXSN",
   }
 ];
 

@@ -119,7 +119,7 @@ export default function ProductDetailPage({ params }: PageProps) {
                 {/* CTA Buttons */}
                 <div className="flex gap-3 mt-5">
                   <a
-                    href={`https://www.amazon.com/s?k=${encodeURIComponent(product.name)}`}
+                    href={product.amazonUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary flex-1 justify-center"
