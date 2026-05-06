@@ -123,7 +123,7 @@ export default function ContactPage() {
                 <h3 className="font-semibold text-accent-dark mb-3">Follow Us</h3>
                 <div className="flex gap-3">
                   {[
-                    { name: 'YouTube', href: 'https://www.youtube.com/@USKEYVISION' },
+                    { name: 'YouTube', href: 'https://www.youtube.com/uskeyvision' },
                     { name: 'Instagram', href: 'https://www.instagram.com/uskeyvision/' },
                     { name: 'TikTok', href: 'https://www.tiktok.com/@uskeyvision.global' },
                   ].map((social) => (
