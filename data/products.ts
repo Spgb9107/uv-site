@@ -32,10 +32,10 @@ export const products: Product[] = [
     rating: 4.5,
     reviewCount: 847,
     category: "Vlogging Kits",
-    image: "/images/products/r01-1.svg",
+    image: "/images/products/r01-1.jpg",
     images: [
-      "/images/products/r01-1.svg",
-      "/images/products/r01-1.svg"
+      "/images/products/r01-1.jpg",
+      "/images/products/r01-1.jpg"
     ],
     badge: "BEST SELLER",
     isBestSeller: true,
@@ -80,10 +80,10 @@ export const products: Product[] = [
     rating: 4.3,
     reviewCount: 512,
     category: "Vlogging Kits",
-    image: "/images/products/k5-1.svg",
+    image: "/images/products/k5-1.jpg",
     images: [
-      "/images/products/k5-1.svg",
-      "/images/products/k5-1.svg"
+      "/images/products/k5-1.jpg",
+      "/images/products/k5-1.jpg"
     ],
     badge: "NEW",
     isNew: true,
@@ -126,10 +126,10 @@ export const products: Product[] = [
     rating: 4.4,
     reviewCount: 1203,
     category: "Vlogging Kits",
-    image: "/images/products/k4-1.svg",
+    image: "/images/products/k4-1.jpg",
     images: [
-      "/images/products/k4-1.svg",
-      "/images/products/k4-1.svg"
+      "/images/products/k4-1.jpg",
+      "/images/products/k4-1.jpg"
     ],
     badge: "POPULAR",
     isBestSeller: false,
@@ -174,10 +174,10 @@ export const products: Product[] = [
     rating: 4.2,
     reviewCount: 689,
     category: "Vlogging Kits",
-    image: "/images/products/k2-1.svg",
+    image: "/images/products/k2-1.jpg",
     images: [
-      "/images/products/k2-1.svg",
-      "/images/products/k2-1.svg"
+      "/images/products/k2-1.jpg",
+      "/images/products/k2-1.jpg"
     ],
     features: [
       "Cardioid directional microphone for focused audio capture",
@@ -219,10 +219,10 @@ export const products: Product[] = [
     rating: 4.6,
     reviewCount: 324,
     category: "Pro Kits",
-    image: "/images/products/vmaster-1.svg",
+    image: "/images/products/vmaster-1.jpg",
     images: [
-      "/images/products/vmaster-1.svg",
-      "/images/products/vmaster-1.svg"
+      "/images/products/vmaster-1.jpg",
+      "/images/products/vmaster-1.jpg"
     ],
     badge: "PRO GRADE",
     features: [
@@ -265,10 +265,10 @@ export const products: Product[] = [
     rating: 4.4,
     reviewCount: 892,
     category: "Microphones",
-    image: "/images/products/k2-1.svg",
+    image: "/images/products/k2-1.jpg",
     images: [
-      "/images/products/k2-1.svg",
-      "/images/products/k2-1.svg"
+      "/images/products/k2-1.jpg",
+      "/images/products/k2-1.jpg"
     ],
     badge: "BEST SELLER",
     isBestSeller: true,
@@ -310,10 +310,10 @@ export const products: Product[] = [
     rating: 4.5,
     reviewCount: 456,
     category: "Microphones",
-    image: "/images/products/k4-1.svg",
+    image: "/images/products/k4-1.jpg",
     images: [
-      "/images/products/k4-1.svg",
-      "/images/products/k4-1.svg"
+      "/images/products/k4-1.jpg",
+      "/images/products/k4-1.jpg"
     ],
     features: [
       "Super-Cardioid Polar Pattern for focused audio capture",
@@ -354,10 +354,10 @@ export const products: Product[] = [
     rating: 4.3,
     reviewCount: 623,
     category: "Accessories",
-    image: "/images/products/k5-1.svg",
+    image: "/images/products/k5-1.jpg",
     images: [
-      "/images/products/k5-1.svg",
-      "/images/products/k5-1.svg"
+      "/images/products/k5-1.jpg",
+      "/images/products/k5-1.jpg"
     ],
     features: [
       "Tri-Color Temperature: 3000K (Warm) to 7000K (Cool)",
@@ -395,10 +395,10 @@ export const products: Product[] = [
     rating: 4.2,
     reviewCount: 334,
     category: "Accessories",
-    image: "/images/products/k2-1.svg",
+    image: "/images/products/k2-1.jpg",
     images: [
-      "/images/products/k2-1.svg",
-      "/images/products/k2-1.svg"
+      "/images/products/k2-1.jpg",
+      "/images/products/k2-1.jpg"
     ],
     features: [
       "Lightweight Aluminum Construction (only 0.8lbs)",
