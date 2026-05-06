@@ -82,7 +82,9 @@ export const products: Product[] = [
     category: "Vlogging Kits",
     image: "https://m.media-amazon.com/images/I/61pP6GaAa-L._AC_SL1000_.jpg",
     images: [
-      "https://m.media-amazon.com/images/I/61pP6GaAa-L._AC_SL1000_.jpg"
+      "https://m.media-amazon.com/images/I/61pP6GaAa-L._AC_SL1000_.jpg",
+      "https://m.media-amazon.com/images/I/61pP6GaAa-L._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/61pP6GaAa-L._AC_SX679_.jpg",
     ],
     badge: "NEW",
     isNew: true,
@@ -127,7 +129,9 @@ export const products: Product[] = [
     category: "Vlogging Kits",
     image: "https://m.media-amazon.com/images/I/61KaBv9gR9L._AC_SL1000_.jpg",
     images: [
-      "https://m.media-amazon.com/images/I/61KaBv9gR9L._AC_SL1000_.jpg"
+      "https://m.media-amazon.com/images/I/61KaBv9gR9L._AC_SL1000_.jpg",
+      "https://m.media-amazon.com/images/I/61KaBv9gR9L._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/61KaBv9gR9L._AC_SX679_.jpg",
     ],
     badge: "POPULAR",
     isBestSeller: false,
@@ -174,7 +178,9 @@ export const products: Product[] = [
     category: "Vlogging Kits",
     image: "https://m.media-amazon.com/images/I/51LmLl9eYfL._AC_SL1000_.jpg",
     images: [
-      "https://m.media-amazon.com/images/I/51LmLl9eYfL._AC_SL1000_.jpg"
+      "https://m.media-amazon.com/images/I/51LmLl9eYfL._AC_SL1000_.jpg",
+      "https://m.media-amazon.com/images/I/51LmLl9eYfL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/51LmLl9eYfL._AC_SX679_.jpg",
     ],
     features: [
       "Cardioid directional microphone for focused audio capture",
@@ -218,7 +224,9 @@ export const products: Product[] = [
     category: "Pro Kits",
     image: "https://m.media-amazon.com/images/I/61nTqL8F6zL._AC_SL1000_.jpg",
     images: [
-      "https://m.media-amazon.com/images/I/61nTqL8F6zL._AC_SL1000_.jpg"
+      "https://m.media-amazon.com/images/I/61nTqL8F6zL._AC_SL1000_.jpg",
+      "https://m.media-amazon.com/images/I/61nTqL8F6zL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/61nTqL8F6zL._AC_SX679_.jpg",
     ],
     badge: "PRO GRADE",
     features: [

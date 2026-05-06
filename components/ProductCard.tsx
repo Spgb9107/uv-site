@@ -1,5 +1,6 @@
-import { products, Product } from '@/data/products';
-import Image from 'next/image';
+'use client';
+
+import { Product } from '@/data/products';
 import Link from 'next/link';
 
 interface ProductCardProps {
@@ -42,6 +43,10 @@ export default function ProductCard({ product, featured = false }: ProductCardPr
               alt={product.name}
               className="max-w-full max-h-full object-contain drop-shadow-xl"
               loading="lazy"
+              onError={(e) => {
+                e.currentTarget.src = '/images/placeholder.svg';
+                e.currentTarget.onerror = null;
+              }}
             />
           </div>
         </div>

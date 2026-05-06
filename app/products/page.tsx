@@ -1,9 +1,18 @@
+'use client';
+
+import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProductCard from '@/components/ProductCard';
 import { products, categories } from '@/data/products';
 
 export default function ProductsPage() {
+  const [activeCategory, setActiveCategory] = useState('all');
+
+  const filteredProducts = activeCategory === 'all'
+    ? products
+    : products.filter(p => p.category.toLowerCase().replace(/\s+/g, '-') === activeCategory);
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <Header />
@@ -34,9 +43,10 @@ export default function ProductsPage() {
             {categories.map((cat) => (
               <button
                 key={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
-                  cat.id === 'all' 
-                    ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/25' 
+                  cat.id === activeCategory
+                    ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/25'
                     : 'bg-gray-100 text-gray-600 hover:bg-primary-50 hover:text-primary-500'
                 }`}
               >
@@ -51,13 +61,25 @@ export default function ProductsPage() {
       <section className="section-padding">
         <div className="container-max">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {products.map((product) => (
+            {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
 
-          {/* Empty State / Info */}
-          {products.length > 0 && (
+          {/* Empty State */}
+          {filteredProducts.length === 0 && (
+            <div className="mt-16 text-center p-8 bg-gray-50 rounded-2xl border border-gray-200">
+              <p className="text-gray-500 font-medium">No products found in this category.</p>
+              <button
+                onClick={() => setActiveCategory('all')}
+                className="mt-3 text-primary-500 font-semibold hover:underline"
+              >
+                View All Products
+              </button>
+            </div>
+          )}
+
+          {filteredProducts.length > 0 && (
             <div className="mt-16 text-center p-8 bg-primary-50 rounded-2xl border border-primary-100">
               <p className="text-primary-700 font-medium">
                 Looking for more? Visit our{' '}

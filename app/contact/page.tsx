@@ -81,9 +81,19 @@ export default function ContactPage() {
               <div className="pt-6 border-t border-gray-100">
                 <h3 className="font-semibold text-accent-dark mb-3">Follow Us</h3>
                 <div className="flex gap-3">
-                  {['YouTube', 'Instagram', 'TikTok'].map((social) => (
-                    <a key={social} href="#" className="px-4 py-2 bg-gray-100 rounded-lg text-sm font-medium text-gray-600 hover:bg-primary-50 hover:text-primary-500 transition-colors">
-                      {social}
+                  {[
+                    { name: 'YouTube', href: 'https://www.youtube.com/@USKEYVISION' },
+                    { name: 'Instagram', href: 'https://www.instagram.com/uskeyvision/' },
+                    { name: 'TikTok', href: 'https://www.tiktok.com/@uskeyvision.global' },
+                  ].map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-gray-100 rounded-lg text-sm font-medium text-gray-600 hover:bg-primary-50 hover:text-primary-500 transition-colors"
+                    >
+                      {social.name}
                     </a>
                   ))}
                 </div>

@@ -2,7 +2,18 @@
 const nextConfig = {
   images: {
     unoptimized: true,
-    domains: ['m.media-amazon.com', 'images-na.ssl-images-amazon.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'm.media-amazon.com',
+        pathname: '/images/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images-na.ssl-images-amazon.com',
+        pathname: '/images/**',
+      },
+    ],
   },
 }
 

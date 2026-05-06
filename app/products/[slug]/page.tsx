@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProductCard from '@/components/ProductCard';
+import ProductGallery from '@/components/ProductGallery';
 import { products, getProductBySlug } from '@/data/products';
 import { notFound } from 'next/navigation';
 
@@ -44,40 +45,13 @@ export default async function ProductDetailPage({ params }: PageProps) {
         <div className="container-max">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Image Gallery */}
-            <div className="space-y-4">
-              <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 flex items-center justify-center min-h-[400px] md:min-h-[500px]">
-                {product.badge && (
-                  <div className="absolute top-6 left-6 z-10 flex gap-2">
-                    <span className={`px-3 py-1.5 rounded-full text-xs font-bold tracking-wider ${
-                      product.badge === 'BEST SELLER' ? 'bg-green-500 text-white' :
-                      product.isNew ? 'bg-primary-500 text-white' : 'bg-primary-500 text-white'
-                    }`}>
-                      {product.badge}
-                    </span>
-                    {discount > 0 && (
-                      <span className="px-3 py-1.5 rounded-full text-xs font-bold bg-red-500 text-white">-{discount}%</span>
-                    )}
-                  </div>
-                )}
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="max-w-full max-h-[450px] object-contain drop-shadow-xl"
-                />
-              </div>
-              
-              {/* Thumbnail Strip */}
-              <div className="flex gap-3 overflow-x-auto pb-2">
-                {[product.image, ...product.images].map((img, i) => (
-                  <button
-                    key={i}
-                    className={`w-20 h-20 rounded-xl border-2 ${i === 0 ? 'border-primary-500' : 'border-transparent'} overflow-hidden flex-shrink-0 hover:border-primary-300 transition-colors`}
-                  >
-                    <img src={img} alt="" className="w-full h-full object-cover" />
-                  </button>
-                ))}
-              </div>
-            </div>
+            <ProductGallery
+              images={Array.from(new Set([product.image, ...product.images]))}
+              name={product.name}
+              badge={product.badge}
+              isNew={product.isNew}
+              discount={discount}
+            />
 
             {/* Product Info */}
             <div>
