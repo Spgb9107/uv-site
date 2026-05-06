@@ -5,15 +5,16 @@ import { products, getProductBySlug } from '@/data/products';
 import { notFound } from 'next/navigation';
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
 }
 
-export default function ProductDetailPage({ params }: PageProps) {
-  const product = getProductBySlug(params.slug);
+export default async function ProductDetailPage({ params }: PageProps) {
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
   if (!product) notFound();
 
   const relatedProducts = products.filter((p) => p.id !== product.id).slice(0, 3);
