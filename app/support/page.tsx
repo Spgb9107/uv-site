@@ -105,12 +105,20 @@ export default function SupportPage() {
               <h2 className="text-2xl font-bold text-accent-dark mb-2 text-center">Contact Us</h2>
               <p className="text-gray-500 text-center mb-8">Have a question? We&apos;ll get back to you within 24 hours.</p>
               
-              <form className="space-y-5">
+              <form 
+                action="https://formspree.io/f/mzzvdrjn"
+                method="POST"
+                className="space-y-5"
+              >
+                <input type="hidden" name="_subject" value="USKEYVISION Support Form Submission" />
+                <input type="hidden" name="_next" value="https://uskeyvision.com/support?success=1" />
+                
                 <div className="grid md:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
                     <input
                       type="text"
+                      name="name"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
                       placeholder="Your name"
                     />
@@ -119,6 +127,8 @@ export default function SupportPage() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                     <input
                       type="email"
+                      name="email"
+                      required
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
                       placeholder="your@email.com"
                     />
@@ -128,6 +138,7 @@ export default function SupportPage() {
                   <label className="block text-sm font-medium text-gray-700 mb-2">Order Number (optional)</label>
                   <input
                     type="text"
+                    name="orderNumber"
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
                     placeholder="e.g., UV-2024-123456"
                   />
@@ -135,7 +146,9 @@ export default function SupportPage() {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                   <textarea
+                    name="message"
                     rows={5}
+                    required
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all resize-none"
                     placeholder="How can we help you?"
                   />

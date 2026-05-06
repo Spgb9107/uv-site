@@ -1,7 +1,48 @@
+'use client';
+
+import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export default function ContactPage() {
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    subject: 'General Inquiry',
+    message: ''
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+
+    try {
+      const response = await fetch('https://formspree.io/f/mldgeqzz', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ firstName: '', lastName: '', email: '', subject: 'General Inquiry', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
   return (
     <main className="min-h-screen bg-white">
       <Header />
@@ -116,26 +157,33 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <div className="lg:col-span-3">
-              <form className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm space-y-6">
+              <form 
+                action="https://formspree.io/f/mldgeqzz"
+                method="POST"
+                className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm space-y-6"
+              >
+                <input type="hidden" name="_subject" value="USKEYVISION Contact Form Submission" />
+                <input type="hidden" name="_next" value="https://uskeyvision.com/contact?success=1" />
+                
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1.5">First Name *</label>
-                    <input type="text" id="firstName" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm" placeholder="John" />
+                    <input type="text" id="firstName" name="firstName" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm" placeholder="John" />
                   </div>
                   <div>
                     <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1.5">Last Name *</label>
-                    <input type="text" id="lastName" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm" placeholder="Doe" />
+                    <input type="text" id="lastName" name="lastName" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm" placeholder="Doe" />
                   </div>
                 </div>
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">Email Address *</label>
-                  <input type="email" id="email" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm" placeholder="john@example.com" />
+                  <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm" placeholder="john@example.com" />
                 </div>
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1.5">Subject</label>
-                  <select id="subject" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm bg-white">
+                  <select id="subject" name="subject" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm bg-white">
                     <option>General Inquiry</option>
                     <option>Product Support</option>
                     <option>Warranty Claim</option>
@@ -147,7 +195,7 @@ export default function ContactPage() {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">Message *</label>
-                  <textarea id="message" rows={5} required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm resize-y" placeholder="Tell us how we can help..." />
+                  <textarea id="message" name="message" rows={5} required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-all text-sm resize-y" placeholder="Tell us how we can help..." />
                 </div>
 
                 <button type="submit" className="btn-primary w-full !py-4 text-base">
