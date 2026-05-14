@@ -23,6 +23,51 @@ export interface Product {
 
 export const products: Product[] = [
   {
+    id: "spt-02",
+    name: "USKEYVISION SPT-02 Magnetic Selfie Stick Tripod",
+    slug: "spt-02-magnetic-tripod",
+    tagline: "Magnetic Phone Mount with LED Fill Light & Wireless Remote",
+    price: 39.99,
+    originalPrice: 49.99,
+    rating: 4.6,
+    reviewCount: 1289,
+    category: "Accessories",
+    image: "https://m.media-amazon.com/images/I/613k3nDM9RL._AC_SY300_SX300_QL70_ML2_.jpg",
+    images: [
+      "https://m.media-amazon.com/images/I/613k3nDM9RL._AC_SY300_SX300_QL70_ML2_.jpg",
+      "https://m.media-amazon.com/images/I/41CZVgvwQGL._AC_US40_.jpg",
+      "https://m.media-amazon.com/images/I/41Ye8tzdYTL._AC_US40_.jpg"
+    ],
+    badge: "NEW",
+    isNew: true,
+    features: [
+      "Magnetic Phone Mount - Strong neodymium magnet holds phone securely without case interference",
+      "Built-in LED Fill Light - 3 brightness levels for perfect lighting in any environment",
+      "Wireless Remote Shutter - Bluetooth remote works up to 33ft (10m) away",
+      "360° Rotating Ball Head - Adjust to any angle for the perfect shot",
+      "Compact & Portable - Folds flat, perfect for travel and daily use",
+      "Universal Compatibility - Works with iPhone 16/15/14/13/12 series and Android phones"
+    ],
+    specs: [
+      { label: "Magnet Strength", value: "Neodymium N52" },
+      { label: "LED Modes", value: "3 Brightness Levels" },
+      { label: "Remote Range", value: "33 ft (10m)" },
+      { label: "Ball Head", value: "360° Rotation" },
+      { label: "Remote Battery", value: "CR2032 (included)" },
+      { label: "Weight", value: "4.2 oz (120g)" }
+    ],
+    description: "The SPT-02 Magnetic Selfie Stick Tripod is the ultimate companion for content creators and social media enthusiasts. Featuring a powerful built-in neodymium magnet, this tripod securely holds your phone without the need for clips or clamps. The integrated LED fill light ensures you're always perfectly lit, while the wireless Bluetooth remote lets you capture photos and videos from up to 33 feet away. Compact enough to fit in your pocket, it's ready for any situation.",
+    includedItems: [
+      "Magnetic Phone Tripod",
+      "Built-in LED Fill Light",
+      "Wireless Bluetooth Remote",
+      "CR2032 Battery (pre-installed in remote)",
+      "Carrying Pouch"
+    ],
+    amazonUrl: "",
+    asin: "B0G2P48TKZ",
+  },
+  {
     id: "r01-kit",
     name: "USKEYVISION R01 Vlogging Kit",
     slug: "r01-vlogging-kit",
